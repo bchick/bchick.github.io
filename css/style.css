@@ -71,10 +71,8 @@ hr {
 }
 
 .profile-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
+  height: 280px;
+  width: auto;
   flex-shrink: 0;
 }
 
@@ -213,8 +211,8 @@ section h2 {
   }
 
   .profile-photo {
-    width: 150px;
-    height: 150px;
+    height: 220px;
+    width: auto;
   }
 
   .contact-links {
