@@ -1,0 +1,18 @@
+title: Brent Y. Chick
+description: PhD Student · Salk Institute · La Jolla, CA
+url: "https://www.brentchick.com"
+baseurl: ""
+
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: /blog/feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - new-post.sh
+  - README.md
