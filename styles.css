@@ -1,0 +1,222 @@
+/* ---------------------------------------------------------------
+   Brent Y. Chick — personal site
+   Aesthetic: refined editorial minimalism
+   --------------------------------------------------------------- */
+
+:root {
+  --bg: #DFEAD8;
+  --fg: #1A1A1A;
+  --muted: #5E6B57;
+  --accent: #B5453F;
+  --rule: #C9D6BF;
+  --max-width: 680px;
+
+  --font-serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14201A;
+    --fg: #ECE7DC;
+    --muted: #8FA08A;
+    --accent: #E68078;
+    --rule: #233129;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 30, "WONK" 0;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+}
+
+/* --- header ----------------------------------------------------- */
+
+header.site-head {
+  margin-bottom: 3.5rem;
+}
+
+h1.name {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 144;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+}
+
+h1.name a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* --- nav --------------------------------------------------------- */
+
+nav.primary {
+  margin: 1.8rem 0 1.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+nav.primary a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav.primary a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+nav.primary a.current { border-bottom-color: var(--fg); }
+
+.contact {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.contact a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+.contact a:hover { color: var(--accent); }
+
+/* --- prose ------------------------------------------------------- */
+
+main p {
+  margin: 0 0 1.4rem;
+}
+
+main p.lead {
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+main a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+main a:hover {
+  color: var(--accent);
+  background-color: rgba(181, 69, 63, 0.06);
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 1rem;
+}
+
+h2 .num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
+
+/* --- publications list ------------------------------------------- */
+
+ul.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.pubs li {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+ul.pubs li:first-child { border-top: 1px solid var(--rule); }
+
+ul.pubs .title {
+  font-size: 1rem;
+  line-height: 1.45;
+  margin: 0 0 0.4rem;
+}
+
+ul.pubs .meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+ul.pubs .meta em { font-style: italic; color: var(--fg); }
+ul.pubs .meta .self { color: var(--accent); font-weight: 500; font-style: normal; }
+
+/* --- footer ------------------------------------------------------ */
+
+footer.site-foot {
+  margin-top: 5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+footer.site-foot a { color: var(--muted); text-decoration: none; }
+footer.site-foot a:hover { color: var(--accent); }
+
+footer .links { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* --- small screens ----------------------------------------------- */
+
+@media (max-width: 540px) {
+  body { font-size: 17px; }
+  .page { padding: 3.5rem 1.25rem 3rem; }
+  header.site-head { margin-bottom: 2.5rem; }
+}
