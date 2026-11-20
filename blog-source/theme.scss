@@ -32,17 +32,9 @@ $headings-font-weight: 600;
 
   --font-body: 'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'Atkinson Hyperlegible Mono', ui-monospace, Menlo, Consolas, monospace;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14201A;
-    --fg: #ECE7DC;
-    --muted: #8FA08A;
-    --accent: #E68078;
-    --rule: #233129;
-    --code-bg: #1A2921;
-  }
+  /* Light only, like the main site. */
+  color-scheme: light;
 }
 
 body {
@@ -486,45 +478,6 @@ th {
 }
 
 .csl-entry { margin-bottom: 0.6rem; }
-
-/* ---------------------------------------------------------------
-   Dark mode: syntax highlighting
-   --------------------------------------------------------------- */
-
-@media (prefers-color-scheme: dark) {
-  div.sourceCode code span,
-  div.sourceCode code span.op,
-  div.sourceCode code span.ot { color: #ECE7DC; }
-  div.sourceCode code span.kw,
-  div.sourceCode code span.cf,
-  div.sourceCode code span.al,
-  div.sourceCode code span.er,
-  div.sourceCode code span.wa { color: #E68078; }
-  div.sourceCode code span.fu,
-  div.sourceCode code span.bu,
-  div.sourceCode code span.im,
-  div.sourceCode code span.pp,
-  div.sourceCode code span.ex { color: #8DB8D8; }
-  div.sourceCode code span.st,
-  div.sourceCode code span.ch,
-  div.sourceCode code span.vs,
-  div.sourceCode code span.ss { color: #B9D58C; }
-  div.sourceCode code span.dv,
-  div.sourceCode code span.bn,
-  div.sourceCode code span.fl,
-  div.sourceCode code span.cn,
-  div.sourceCode code span.sc { color: #E8C27A; }
-  div.sourceCode code span.va,
-  div.sourceCode code span.at { color: #C8B6E2; }
-  div.sourceCode code span.co,
-  div.sourceCode code span.do,
-  div.sourceCode code span.an,
-  div.sourceCode code span.cv,
-  div.sourceCode code span.in { color: #7F8F79; }
-
-  main.content p a:hover,
-  main.content li a:hover { background-color: rgba(230, 128, 120, 0.08); }
-}
 
 /* ---------------------------------------------------------------
    Small screens

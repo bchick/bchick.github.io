@@ -13,16 +13,9 @@
 
   --font-body: 'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'Atkinson Hyperlegible Mono', ui-monospace, Menlo, Consolas, monospace;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14201A;
-    --fg: #ECE7DC;
-    --muted: #8FA08A;
-    --accent: #E68078;
-    --rule: #233129;
-  }
+  /* Light only: everyone sees the same colours, whatever their device's dark-mode setting. */
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -185,14 +178,13 @@ main section { scroll-margin-top: 4.5rem; }
 main section + section { margin-top: 4.5rem; }
 
 p.more {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   color: var(--muted);
-  margin: 1.2rem 0 0;
+  margin: 1rem 0 0;
 }
 
-ul.pubs.repos .title { font-family: var(--font-mono); font-size: 0.92rem; }
-ul.pubs.repos .meta { font-family: var(--font-body); font-size: 0.92rem; color: var(--fg); }
+/* Code entries: same font as the rest of the page; descriptions read as prose. */
+ul.pubs.repos .meta { font-family: var(--font-body); font-size: 0.9rem; }
 
 /* --- publications list ------------------------------------------- */
 
@@ -203,7 +195,7 @@ ul.pubs {
 }
 
 ul.pubs li {
-  padding: 1.4rem 0;
+  padding: 0.8rem 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -211,15 +203,15 @@ ul.pubs li:first-child { border-top: 1px solid var(--rule); }
 
 ul.pubs .title {
   font-size: 1rem;
-  line-height: 1.45;
-  margin: 0 0 0.4rem;
+  line-height: 1.4;
+  margin: 0 0 0.2rem;
 }
 
 ul.pubs .meta {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.5;
   margin: 0;
 }
 
