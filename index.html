@@ -9,7 +9,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,30..100,0..1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" title="Brent Y. Chick — Blog" href="blog/index.xml">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,26 +19,29 @@
   <div class="page">
 
     <header class="site-head">
-      <h1 class="name"><a href="index.html">Brent Y. Chick</a></h1>
+      <h1 class="name"><a href="./">Brent Y. Chick</a></h1>
       <p class="tagline">PhD Candidate · Salk Institute · La Jolla, CA</p>
-
-      <nav class="primary">
-        <a href="blog/">Blog</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-      </nav>
-
-      <div class="contact">
-        <a href="mailto:bchick@salk.edu">Email</a>
-        <a href="Brent_Chick_Resume.pdf" target="_blank" rel="noopener">CV</a>
-        <a href="https://scholar.google.com/citations?user=QQkDZcAAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
-        <a href="https://github.com/bchick" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/brent-chick-50898075/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://twitter.com/brentchick" target="_blank" rel="noopener">Twitter</a>
-      </div>
     </header>
 
+    <nav class="primary" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#code">Code</a>
+      <a href="blog/">Blog</a>
+    </nav>
+
+    <div class="contact">
+      <a href="mailto:bchick@salk.edu">Email</a>
+      <a href="Brent_Chick_Resume.pdf" target="_blank" rel="noopener">CV</a>
+      <a href="https://scholar.google.com/citations?user=QQkDZcAAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://github.com/bchick" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/brent-chick-50898075/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/brentchick" target="_blank" rel="noopener">Twitter</a>
+    </div>
+
     <main>
+
+      <section id="about">
       <p class="lead">
         Hi, I'm Brent. My work sits at the intersection of chromatin biology, cell signaling, and computation.
         I'm a PhD candidate at the <a href="https://www.salk.edu/" target="_blank" rel="noopener">Salk Institute</a>
@@ -72,6 +76,189 @@
         and AI×bio companies in the Bay Area. If you're working on hard, interesting problems in any of those areas,
         I'd love to <a href="mailto:bchick@salk.edu">get in touch</a>.
       </p>
+    
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+      <p>
+        I work on how cells use chromatin to encode, stabilize, and rewire identity, and how to leverage those mechanisms
+        to understand and engineer cell behavior. My approach pairs wet-lab genomics and bioengineering with computational analysis.
+      </p>
+
+      <h3><span class="num">01</span>Chromatin remodeling and T cell fate</h3>
+      <p>
+        My PhD work focuses on the BAF (mSWI/SNF) chromatin remodeling complex in T cells.
+        In a 2023 <a href="https://doi.org/10.1016/j.immuni.2023.05.005" target="_blank" rel="noopener"><em>Immunity</em></a>
+        paper (co-first author), we showed that canonical BAF activity shapes the enhancer landscape that licenses
+        CD8⁺ T cell effector and memory fates. Loss of BAF function blocks the chromatin priming required for memory commitment,
+        implicating BAF as a key regulator of T cell durability with direct relevance to next-generation cell therapies.
+      </p>
+
+      <h3><span class="num">02</span>Dynamic signaling and chromatin</h3>
+      <p>
+        The final chapter of my PhD is focused on how chromatin decodes dynamic signaling. Most chromatin profiling treats signaling as a static input,
+        but cells in vivo encounter signals that vary in amplitude, duration, and timing. To get at this, I pair optogenetic
+        control of signaling pathways with a simplified 96-well CUT&amp;RUN protocol I built, mapping how time-varying inputs translate
+        into changes in chromatin state and gene regulation.
+      </p>
+
+      <h3><span class="num">03</span>In vitro T cell engineering from stem cells</h3>
+      <p>
+        Earlier in the <a href="https://crookslab.mednet.ucla.edu/" target="_blank" rel="noopener">Crooks lab at UCLA</a>,
+        I contributed to the development of the artificial thymic organoid (ATO) system, a stromal cell-based platform for
+        generating mature T cells from human hematopoietic stem cells <em>in vitro</em>. The
+        <a href="https://www.nature.com/articles/nmeth.4237" target="_blank" rel="noopener">original methodology</a>
+        (<em>Nature Methods</em>, 2017) and extensions in
+        <a href="https://doi.org/10.1016/j.stem.2018.12.011" target="_blank" rel="noopener"><em>Cell Stem Cell</em></a>
+        (2019) and <a href="https://doi.org/10.1016/j.celrep.2020.108320" target="_blank" rel="noopener"><em>Cell Reports</em></a>
+        (2020) gave the field a tractable system to dissect human T cell development and to generate engineered T cells from iPSCs.
+      </p>
+
+      <h3><span class="num">04</span>Bioengineering and signaling dynamics</h3>
+      <p>
+        My MA work at UCSB with <a href="https://labs.mcdb.ucsb.edu/wilson/max/" target="_blank" rel="noopener">Max Wilson</a>
+        used optogenetic tools to perturb signaling pathways with quantitative control over timing and amplitude.
+        The bioengineering perspective of that lab still shapes how I think about chromatin and cell-state transitions:
+        dynamics, feedback, and hysteresis, rather than static localization.
+      </p>
+
+      <h3><span class="num">05</span>What I'm thinking about next</h3>
+      <p>
+        Where I want to push next is the intersection of chromatin biology and modern ML,
+        with an eye toward therapeutic applications of chromatin engineering. More on this to come.
+      </p>
+
+    
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+      <p>
+        Selected publications. Full list on
+        <a href="https://scholar.google.com/citations?user=QQkDZcAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+
+      <ul class="pubs">
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1038/s41594-026-01918-0" target="_blank" rel="noopener">Mechanisms and consequences of nucleosome remodeling by mammalian SWI/SNF complexes</a></p>
+          <p class="meta">
+            <span class="self">Chick BY</span>, Youmans DT, Hargreaves DC. <em>Nature Structural &amp; Molecular Biology</em>, 2026 (review).
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1038/s41586-025-09989-7" target="_blank" rel="noopener">Atlas-guided discovery of transcription factors for T cell programming</a></p>
+          <p class="meta">
+            Chung HK, Liu C, Battu A, … <span class="self">Chick B</span>, … Hargreaves DC, … Kaech SM, Wang W (50 authors). <em>Nature</em>, 2026.
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1101/2025.11.12.688147" target="_blank" rel="noopener">The antiviral interferon pathway drives astrocyte aging and motor decline</a></p>
+          <p class="meta">
+            Labarta-Bajo L, Thanawalla AR, Gutierrez IL, Lei Soe SM, <span class="self">Chick BY</span>, Andritsogianni I, Metanat S, Hargreaves DC, Kaech SM, Azim E, Allen NJ. <em>bioRxiv</em>, 2025.
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1038/s41588-023-01628-z" target="_blank" rel="noopener">RNA polymerase II promoter-proximal pausing promotes BAF chromatin binding and remodeling</a></p>
+          <p class="meta">
+            <span class="self">Chick BY</span>, Hargreaves DC. <em>Nature Genetics</em>, 2024 (invited commentary).
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1016/j.immuni.2023.05.005" target="_blank" rel="noopener">Canonical BAF complex activity shapes the enhancer landscape that licenses CD8⁺ T cell effector and memory fates</a></p>
+          <p class="meta">
+            McDonald B†, <span class="self">Chick BY</span>†, Ahmed NS, Burns M, Ma S, Casillas E, Chen D, Mann TH, O’Connor C, Hah N, Hargreaves DC, Kaech SM. <em>Immunity</em>, 2023 (†co-first author).
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.59249/AXGU7370" target="_blank" rel="noopener">Early chromatin remodeling events in acutely stimulated CD8⁺ T cells</a></p>
+          <p class="meta">
+            McDonald B†, <span class="self">Chick BY</span>†, Hargreaves DC, Kaech SM. <em>Yale Journal of Biology and Medicine</em>, 2023 (†co-first author).
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1038/s41594-022-00858-9" target="_blank" rel="noopener">Switching under selection: how CoREST controls endocrine therapy resistance in ER+ breast cancer</a></p>
+          <p class="meta">
+            <span class="self">Chick BY</span>, Hargreaves DC. <em>Nature Structural &amp; Molecular Biology</em>, 2022 (invited commentary).
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1016/j.celrep.2020.108320" target="_blank" rel="noopener">In vitro recapitulation of murine thymopoiesis from single hematopoietic stem cells</a></p>
+          <p class="meta">
+            Montel-Hagen A, Sun V, Casero D, Tsai S, Zampieri A, Jackson N, Li S, Lopez S, Zhu Y, <span class="self">Chick B</span>, He C, de Barros SC, Seet CS, Crooks GM. <em>Cell Reports</em>, 2020.
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.4049/jimmunol.1901519" target="_blank" rel="noopener">Pleiotropic roles of VEGF in the microenvironment of the developing thymus</a></p>
+          <p class="meta">
+            de Barros SC, Suterwala BT, He C, Ge S, <span class="self">Chick B</span>, Blumberg GK, Kim K, Klein S, Zhu Y, Wang X, Casero D, Crooks GM. <em>The Journal of Immunology</em>, 2020.
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1016/j.stem.2018.12.011" target="_blank" rel="noopener">Organoid-induced differentiation of conventional T cells from human pluripotent stem cells</a></p>
+          <p class="meta">
+            Montel-Hagen A, Seet CS, Li S, <span class="self">Chick B</span>, Zhu Y, Chang P, Tsai S, Sun V, Lopez S, Chen HC, He C, Chin CJ, Casero D, Crooks GM. <em>Cell Stem Cell</em>, 2019.
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://doi.org/10.1016/j.exphem.2018.06.145" target="_blank" rel="noopener">Notch signaling regulates the differentiation of CLEC9A+ dendritic cells (cDC1) from human and mouse hematopoietic stem/progenitor cells</a></p>
+          <p class="meta">
+            Seet CS, Li S, <span class="self">Chick B</span>, Casero D, Kim J, Gschweng E, Chen HC, Zhu Y, Lopez S, Miao R, Montel-Hagen A, Kohn D, Sehl M, Crooks GM. <em>Experimental Hematology</em>, 2018 (meeting abstract).
+          </p>
+        </li>
+
+        <li>
+          <p class="title"><a href="https://www.nature.com/articles/nmeth.4237" target="_blank" rel="noopener">Generation of mature T cells from human hematopoietic stem and progenitor cells in artificial thymic organoids</a></p>
+          <p class="meta">
+            Seet CS, He C, Bethune MT, Li S, <span class="self">Chick B</span>, Gschweng EH, Zhu Y, Kim K, Kohn DB, Baltimore D, Crooks GM, Montel-Hagen A. <em>Nature Methods</em>, 2017.
+          </p>
+        </li>
+
+      </ul>
+    
+      </section>
+
+      <section id="code">
+        <h2>Code</h2>
+        <ul class="pubs repos">
+          <li>
+            <p class="title"><a href="https://github.com/bchick/arid1a-cd8-tcell-analysis" target="_blank" rel="noopener">arid1a-cd8-tcell-analysis</a></p>
+            <p class="meta">Reproducible reanalysis of McDonald, Chick et al. 2023 <em>Immunity</em> (cBAF/ARID1A in CD8⁺ T cells).</p>
+          </li>
+          <li>
+            <p class="title"><a href="https://github.com/bchick/mcbla-cutrun-pipe" target="_blank" rel="noopener">mcbla-cutrun-pipe</a></p>
+            <p class="meta">Snakemake workflow for paired-end CUT&amp;RUN: FASTQ to QC, peaks, normalized tracks and differential binding.</p>
+          </li>
+          <li>
+            <p class="title"><a href="https://github.com/bchick/mcbla-bulkatac-pipe" target="_blank" rel="noopener">mcbla-bulkatac-pipe</a></p>
+            <p class="meta">Bulk ATAC-seq Snakemake workflow: FASTQ to peaks and QC, with opt-in differential accessibility, time-course, chromVAR and TOBIAS analyses.</p>
+          </li>
+          <li>
+            <p class="title"><a href="https://github.com/bchick/timecourse-patterns" target="_blank" rel="noopener">timecourse-patterns</a></p>
+            <p class="meta">Temporal clustering of omics timecourses: dynamic features, named trajectory classes, publication figures.</p>
+          </li>
+        </ul>
+        <p class="more">More on <a href="https://github.com/bchick" target="_blank" rel="noopener">GitHub</a></p>
+      </section>
+
+      <!-- Newest blog posts, read from blog/index.xml. Hidden until there is at least one post. -->
+      <section id="writing" hidden>
+        <h2>Recent posts</h2>
+        <ul class="pubs" id="recent-posts"></ul>
+        <p class="more"><a href="blog/">All posts</a></p>
+      </section>
+
     </main>
 
     <footer class="site-foot">
@@ -82,5 +269,51 @@
     </footer>
 
   </div>
+
+  <script>
+    // Recent posts: show the three newest entries from the blog's RSS feed.
+    fetch('blog/index.xml')
+      .then(function (r) { return r.ok ? r.text() : ''; })
+      .then(function (xml) {
+        if (!xml) return;
+        var items = new DOMParser().parseFromString(xml, 'application/xml').querySelectorAll('item');
+        if (!items.length) return;
+        var list = document.getElementById('recent-posts');
+        Array.prototype.slice.call(items, 0, 3).forEach(function (item) {
+          var title = item.querySelector('title').textContent;
+          var link = new URL(item.querySelector('link').textContent).pathname;
+          var dateEl = item.querySelector('pubDate');
+          var date = dateEl ? new Date(dateEl.textContent).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }) : '';
+          var li = document.createElement('li');
+          var p = document.createElement('p'); p.className = 'title';
+          var a = document.createElement('a'); a.href = link; a.textContent = title;
+          p.appendChild(a); li.appendChild(p);
+          if (date) { var m = document.createElement('p'); m.className = 'meta'; m.textContent = date; li.appendChild(m); }
+          list.appendChild(li);
+        });
+        document.getElementById('writing').hidden = false;
+      })
+      .catch(function () {});
+
+    // Nav: add a bottom rule once it sticks to the top, and underline the section in view.
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var nav = document.querySelector('nav.primary');
+      var header = document.querySelector('header.site-head');
+      new IntersectionObserver(function (entries) {
+        nav.classList.toggle('stuck', !entries[0].isIntersecting);
+      }).observe(header);
+
+      var links = {};
+      nav.querySelectorAll('a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          Object.keys(links).forEach(function (id) { links[id].classList.toggle('current', id === e.target.id); });
+        });
+      }, { rootMargin: '-35% 0px -60% 0px' });
+      document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
+    })();
+  </script>
 </body>
 </html>

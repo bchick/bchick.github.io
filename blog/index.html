@@ -81,8 +81,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,30..100,0..1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="alternate" type="application/rss+xml" title="Brent Y. Chick — Blog" href="./blog/index.xml">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&amp;family=Atkinson+Hyperlegible+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -108,24 +107,25 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <div class="chrome chrome-head">
   <header class="site-head">
-    <p class="name"><a href="./">Brent Y. Chick</a></p>
+    <p class="name"><a href="https://www.brentchick.com/">Brent Y. Chick</a></p>
     <p class="tagline">PhD Candidate · Salk Institute · La Jolla, CA</p>
-
-    <nav class="primary">
-      <a href="./blog/" class="current">Blog</a>
-      <a href="./research.html">Research</a>
-      <a href="./publications.html">Publications</a>
-    </nav>
-
-    <div class="contact">
-      <a href="mailto:bchick@salk.edu">Email</a>
-      <a href="./Brent_Chick_Resume.pdf" target="_blank" rel="noopener">CV</a>
-      <a href="https://scholar.google.com/citations?user=QQkDZcAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
-      <a href="https://github.com/bchick" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/brent-chick-50898075/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://twitter.com/brentchick" target="_blank" rel="noopener">Twitter</a>
-    </div>
   </header>
+</div>
+
+<nav class="primary" aria-label="Sections">
+  <a href="https://www.brentchick.com/#research">Research</a>
+  <a href="https://www.brentchick.com/#publications">Publications</a>
+  <a href="https://www.brentchick.com/#code">Code</a>
+  <a href="https://www.brentchick.com/blog/" class="current">Blog</a>
+</nav>
+
+<div class="contact">
+  <a href="mailto:bchick@salk.edu">Email</a>
+  <a href="https://www.brentchick.com/Brent_Chick_Resume.pdf" target="_blank" rel="noopener">CV</a>
+  <a href="https://scholar.google.com/citations?user=QQkDZcAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
+  <a href="https://github.com/bchick" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://www.linkedin.com/in/brent-chick-50898075/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://twitter.com/brentchick" target="_blank" rel="noopener">Twitter</a>
 </div>
 
 <header id="title-block-header">
@@ -150,11 +150,23 @@ No matching items
   <footer class="site-foot">
     <span>© 2026 Brent Y. Chick · Views are my own. Analyses of published data, not peer reviewed.</span>
     <div class="links">
-      <a href="./blog/index.xml">RSS</a>
+      <a href="https://www.brentchick.com/blog/index.xml">RSS</a>
       <a href="mailto:bchick@salk.edu">bchick@salk.edu</a>
     </div>
   </footer>
 </div>
+
+<script>
+  // Add a bottom rule to the nav once it sticks to the top of the window.
+  (function () {
+    var nav = document.querySelector('nav.primary');
+    var header = document.querySelector('header.site-head');
+    if (!nav || !header || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+      nav.classList.toggle('stuck', !entries[0].isIntersecting);
+    }).observe(header);
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -387,7 +399,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/www\.brentchick\.com\/blog");
+      var filterRegex = new RegExp("^https?://(www\.)?brentchick\.com/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }

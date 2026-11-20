@@ -2,8 +2,20 @@
   <footer class="site-foot">
     <span>© 2026 Brent Y. Chick · Views are my own. Analyses of published data, not peer reviewed.</span>
     <div class="links">
-      <a href="/blog/index.xml">RSS</a>
+      <a href="https://www.brentchick.com/blog/index.xml">RSS</a>
       <a href="mailto:bchick@salk.edu">bchick@salk.edu</a>
     </div>
   </footer>
 </div>
+
+<script>
+  // Add a bottom rule to the nav once it sticks to the top of the window.
+  (function () {
+    var nav = document.querySelector('nav.primary');
+    var header = document.querySelector('header.site-head');
+    if (!nav || !header || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+      nav.classList.toggle('stuck', !entries[0].isIntersecting);
+    }).observe(header);
+  })();
+</script>

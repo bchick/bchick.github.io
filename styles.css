@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------
    Brent Y. Chick — personal site
-   Aesthetic: refined editorial minimalism
+   Type: Atkinson Hyperlegible Next + Mono
    --------------------------------------------------------------- */
 
 :root {
@@ -11,8 +11,8 @@
   --rule: #C9D6BF;
   --max-width: 680px;
 
-  --font-serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-body: 'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Atkinson Hyperlegible Mono', ui-monospace, Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,10 +33,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-serif);
-  font-feature-settings: "ss01", "ss02";
-  font-optical-sizing: auto;
-  font-variation-settings: "SOFT" 30, "WONK" 0;
+  font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -52,13 +49,12 @@ body {
 /* --- header ----------------------------------------------------- */
 
 header.site-head {
-  margin-bottom: 3.5rem;
+  margin-bottom: 0;
 }
 
 h1.name {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 144;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: clamp(2.4rem, 6vw, 3.4rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -81,14 +77,23 @@ h1.name a {
 
 /* --- nav --------------------------------------------------------- */
 
+/* The nav sits outside the header so it can stay pinned to the top while scrolling. */
 nav.primary {
-  margin: 1.8rem 0 1.4rem;
-  padding-top: 1.4rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  margin: 1.8rem 0 0.6rem;
+  padding: 1.4rem 0 0.8rem;
   border-top: 1px solid var(--rule);
+  border-bottom: 1px solid transparent;
   display: flex;
   flex-wrap: wrap;
   gap: 1.6rem;
+  transition: border-color 0.2s ease;
 }
+
+nav.primary.stuck { border-top-color: transparent; border-bottom-color: var(--rule); }
 
 nav.primary a {
   font-family: var(--font-mono);
@@ -106,7 +111,7 @@ nav.primary a:hover { border-bottom-color: var(--accent); color: var(--accent); 
 nav.primary a.current { border-bottom-color: var(--fg); }
 
 .contact {
-  margin-top: 0.4rem;
+  margin: 0.4rem 0 3.5rem;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--muted);
@@ -143,16 +148,24 @@ main a:hover {
 }
 
 h2 {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
   margin: 3rem 0 1rem;
 }
 
-h2 .num {
+h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 2.2rem 0 0.6rem;
+}
+
+h2 .num,
+h3 .num {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 400;
@@ -161,6 +174,25 @@ h2 .num {
   vertical-align: middle;
   margin-right: 0.6rem;
 }
+
+/* --- one-page sections -------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+main section { scroll-margin-top: 4.5rem; }
+main section + section { margin-top: 4.5rem; }
+
+p.more {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 1.2rem 0 0;
+}
+
+ul.pubs.repos .title { font-family: var(--font-mono); font-size: 0.92rem; }
+ul.pubs.repos .meta { font-family: var(--font-body); font-size: 0.92rem; color: var(--fg); }
 
 /* --- publications list ------------------------------------------- */
 
@@ -188,6 +220,7 @@ ul.pubs .meta {
   font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.55;
+  margin: 0;
 }
 
 ul.pubs .meta em { font-style: italic; color: var(--fg); }
@@ -218,5 +251,5 @@ footer .links { display: flex; gap: 1rem; flex-wrap: wrap; }
 @media (max-width: 540px) {
   body { font-size: 17px; }
   .page { padding: 3.5rem 1.25rem 3rem; }
-  header.site-head { margin-bottom: 2.5rem; }
+  .contact { margin-bottom: 2.5rem; }
 }

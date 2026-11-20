@@ -31,6 +31,7 @@ format:
     code-summary: "Show code"
     code-copy: true
     link-external-newwindow: true
+    link-external-filter: '^https?://(www\.)?brentchick\.com/'   # your own pages open in the same tab
     fig-align: left
 
 execute:
