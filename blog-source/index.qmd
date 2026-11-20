@@ -1,0 +1,19 @@
+---
+title: "Blog"
+description: "Notes and exploratory analyses of published genomics data."
+title-block-style: none     # the site header already says where you are
+listing:
+  id: posts
+  contents: posts
+  sort: "date desc"
+  template: _includes/listing.ejs
+  date-format: "MMM D, YYYY"
+  fields: [title, date, description, categories, reading-time]
+  feed:
+    type: full              # full text in RSS, which R-bloggers and Rogue Scholar need
+---
+
+::: {.lead}
+Notes and exploratory analyses of published genomics data: questions I got curious about,
+re-analyses, and methods worth writing down. Code is included with every post.
+:::

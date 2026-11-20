@@ -1,0 +1,99 @@
+---
+title: "Example post: how an analysis write-up is laid out"
+description: "A worked example with simulated data. Drafts like this one never appear on the live site."
+date: 2026-11-20
+categories: [example]
+draft: true
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+source("../../_common.R")
+```
+
+**TL;DR:** Lead with the answer in a sentence or two, so someone arriving from Bluesky or
+Substack gets the point before any code.
+
+## Question
+
+State the question and why it's interesting. Link the paper the data come from and say what
+this post adds: a different cut of the data, a new comparison, or a check of a claim. Cite with
+`[@key]` from a `references.bib` file in the post's folder, like this [@chick2024].
+
+## Data
+
+- **Source:** GEO [GSE000000](https://www.ncbi.nlm.nih.gov/geo/) (placeholder)
+- **Paper:** Author *et al.*, *Journal* (year), doi: …
+- **Files used:** processed count matrix, as deposited
+- **Accessed:** 2026-11-20
+
+This example uses **simulated data** so it renders anywhere.
+
+## Approach
+
+Code is folded by default. Readers can expand any block, and everything needed to rerun the
+analysis is on the page.
+
+```{r}
+#| label: simulate
+set.seed(1)
+n_null <- 3800
+n_de <- 200
+
+res <- data.frame(
+  gene   = paste0("gene", seq_len(n_null + n_de)),
+  log2fc = c(rnorm(n_null, 0, 0.3),
+             rnorm(n_de, sample(c(-2, 2), n_de, replace = TRUE), 0.6)),
+  se     = runif(n_null + n_de, 0.25, 0.6)
+)
+res$pvalue <- 2 * pnorm(-abs(res$log2fc / res$se))
+res$padj   <- p.adjust(res$pvalue, method = "BH")
+res$status <- with(res, ifelse(padj < 0.05 & log2fc > 1, "Up",
+                        ifelse(padj < 0.05 & log2fc < -1, "Down", "Not significant")))
+
+table(res$status)
+```
+
+## Results
+
+```{r}
+#| label: fig-volcano
+#| fig-cap: "Simulated differential expression. Genes with adjusted p < 0.05 and |log2 fold change| > 1 are coloured."
+#| classes: preview-image
+#| fig-width: 7
+#| fig-height: 4.5
+ggplot(res, aes(log2fc, -log10(pvalue), colour = status)) +
+  geom_point(size = 0.8, alpha = 0.7) +
+  scale_colour_manual(
+    values = c(Up = blog_palette[["accent"]],
+               Down = blog_palette[["blue"]],
+               `Not significant` = "grey70"),
+    name = NULL
+  ) +
+  labs(x = "log2 fold change", y = "-log10 p-value")
+```
+
+Refer to figures by label (@fig-volcano) and tell the reader what to look at. Tag the main
+figure with `classes: preview-image` so it becomes the image on link previews.
+
+## Caveats
+
+Say what this analysis can't show: sample size, batch structure, whether the original
+authors' processing was reused, and anything you'd check before trusting the result.
+
+## Reproducibility
+
+- **Code:** [github.com/bchick](https://github.com/bchick) (link the repo or script for the post)
+- **Environment:** R `r getRversion()`; full session info below.
+
+::: {.callout-note collapse="true"}
+## Session info
+
+```{r}
+#| label: session-info
+#| echo: false
+sessionInfo()
+```
+:::

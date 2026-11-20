@@ -1,0 +1,46 @@
+---
+title: "__TITLE__"
+description: "One sentence shown in the post list and on link previews."
+date: __DATE__
+categories: []
+draft: true                 # delete this line when the post is ready to publish
+# bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+source("../../_common.R")
+```
+
+**TL;DR:**
+
+## Question
+
+## Data
+
+- **Source:**
+- **Paper:**
+- **Files used:**
+- **Accessed:** __DATE__
+
+## Approach
+
+## Results
+
+## Caveats
+
+## Reproducibility
+
+- **Code:**
+- **Environment:** R `r getRversion()`; full session info below.
+
+::: {.callout-note collapse="true"}
+## Session info
+
+```{r}
+#| label: session-info
+#| echo: false
+sessionInfo()
+```
+:::

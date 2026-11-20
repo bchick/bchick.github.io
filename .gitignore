@@ -1,0 +1,6 @@
+# Quarto working files
+blog-source/.quarto/
+.blog-preview/
+
+# Raw data used by posts. Link to the public source instead of committing it.
+blog-source/posts/*/data/

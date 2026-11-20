@@ -1,0 +1,39 @@
+# Quarto source for www.brentchick.com/blog/
+#
+# Rendered output goes to ../blog, which GitHub Pages serves as-is.
+# Use blog.ps1 (in this folder) to create posts, preview, and render.
+
+project:
+  type: website
+  output-dir: ../blog
+  post-render: _scripts/remove-drafts.R   # keeps posts marked `draft: true` off the live site
+
+website:
+  title: "Brent Y. Chick"
+  description: "Notes and exploratory analyses of published genomics data."
+  site-url: "https://www.brentchick.com/blog"
+  search: false
+  open-graph: true          # link previews on Bluesky, LinkedIn, Slack, etc.
+  twitter-card:
+    creator: "@brentchick"
+
+format:
+  html:
+    theme: [default, theme.scss]
+    grid:
+      body-width: 632px     # same text column as the rest of the site
+    include-in-header: _includes/head.html
+    include-before-body: _includes/header.html
+    include-after-body: _includes/footer.html
+    lang: en
+    date-format: "MMMM D, YYYY"
+    code-fold: true
+    code-summary: "Show code"
+    code-copy: true
+    link-external-newwindow: true
+    fig-align: left
+
+execute:
+  freeze: auto              # only re-run a post's code when that post changes
+  warning: false
+  message: false

@@ -1,0 +1,8 @@
+# Defaults for every post in this folder.
+author:
+  - name:
+      given: "Brent Y."
+      family: "Chick"
+    url: "https://www.brentchick.com"
+citation: true          # adds a "Citation" section with BibTeX
+license: "CC BY"        # adds a "Reuse" section (CC BY 4.0)

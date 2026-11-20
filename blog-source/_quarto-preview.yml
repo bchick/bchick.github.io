@@ -1,0 +1,4 @@
+# Profile used by `blog.ps1 preview`.
+# Writes to a throwaway folder, so preview output never lands in ../blog.
+project:
+  output-dir: ../.blog-preview
